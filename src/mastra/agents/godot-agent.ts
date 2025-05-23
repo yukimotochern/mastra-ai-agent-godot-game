@@ -43,7 +43,7 @@ export const godotAgent = new Agent({
       * When you run into any major issue while executing a plan from the user, please don't try to directly work around it. Instead, propose a new plan and confirm with the user before proceeding.
       </TROUBLESHOOTING>
 `.replace(/      /, ''),
-  model: anthropic('claude-3-7-sonnet-latest'),
+  model: anthropic('claude-sonnet-4-20250514'),
   tools: {
     bashTool,
   },
