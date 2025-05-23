@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4pxcqaehk5oe"]
+
+[ext_resource type="Script" path="res://scripts/gem.gd" id="1_x4ynq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d5k8"]
+size = Vector2(40, 40)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l8ckw"]
+
+[node name="Gem" type="Area2D"]
+script = ExtResource("1_x4ynq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7d5k8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.945098, 0.262745, 0.784314, 1)
+scale = Vector2(40, 40)
+texture = SubResource("CanvasTexture_l8ckw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

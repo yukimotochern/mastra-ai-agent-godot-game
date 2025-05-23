@@ -1,0 +1,32 @@
+{
+  "name": "mastra-agent-nearme-study-session",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "mastra dev",
+    "build": "mastra build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.2.11",
+    "@mastra/core": "^0.10.0",
+    "@mastra/libsql": "^0.10.0",
+    "@mastra/loggers": "^0.10.0",
+    "@mastra/memory": "^0.10.0",
+    "zod": "^3.25.20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "mastra": "^0.10.0",
+    "typescript": "^5.8.3"
+  }
+}

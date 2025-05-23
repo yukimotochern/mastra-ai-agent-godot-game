@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvf2ydkbx4y8r"]
+
+[ext_resource type="Script" uid="uid://bvsbaoedva8qr" path="res://scripts/game_manager.gd" id="1_oa7qw"]
+[ext_resource type="PackedScene" uid="uid://c4pxcqaehk5oe" path="res://scenes/gem.tscn" id="2_kkfnx"]
+[ext_resource type="PackedScene" uid="uid://c0eo0qpyrtpfn" path="res://scenes/player_pad.tscn" id="3_kcnxl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wnqvl"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_oa7qw")
+gem_scene = ExtResource("2_kkfnx")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.0980392, 0.0980392, 0.152941, 1)
+position = Vector2(576, 324)
+scale = Vector2(1152, 648)
+texture = SubResource("CanvasTexture_wnqvl")
+
+[node name="PlayerPad" parent="." instance=ExtResource("3_kcnxl")]
+position = Vector2(576, 600)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 46.0
+text = "Score: 0"
+
+[node name="GameOverPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 20.0
+offset_right = 62.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[connection signal="pressed" from="GameOverPanel/RestartButton" to="." method="_on_restart_button_pressed"]

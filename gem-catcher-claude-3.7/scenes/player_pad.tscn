@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0eo0qpyrtpfn"]
+
+[ext_resource type="Script" path="res://scripts/player_pad.gd" id="1_bfcbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxvd8"]
+size = Vector2(100, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vvw2m"]
+
+[node name="PlayerPad" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_bfcbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jxvd8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.184314, 0.568627, 0.964706, 1)
+scale = Vector2(100, 20)
+texture = SubResource("CanvasTexture_vvw2m")
